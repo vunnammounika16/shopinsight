@@ -17,7 +17,7 @@ function App() {
 
   // Fetch KPI & Top Product Analytics on mount
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/analytics')
+    fetch('https://shopinsight-backend.onrender.com')
       .then((res) => {
         if (!res.ok) throw new Error('API server is offline');
         return res.json();
@@ -37,7 +37,7 @@ function App() {
     e.preventDefault();
     setPredicting(true);
     try {
-      const res = await fetch('http://127.0.0.1:8000/api/predict', {
+      const res = await fetch('https://shopinsight-backend.onrender.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
